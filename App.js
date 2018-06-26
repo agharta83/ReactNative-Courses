@@ -19,22 +19,32 @@ const App = () => {
           initial
         />
 
-        <Drawer hideNavBar key='drawer' contentComponent={SidedrawerComponent} drawerPosition='left' size={25} drawerWidth={300}>
+        {/** DRAWER Navigation **/}
+        <Drawer
+          hideNavBar
+          key='drawer'
+          contentComponent={SidedrawerComponent}
+          drawerPosition= 'left'
+          drawerWidth={300}
+          navigationBarStyle={{ backgroundColor: 'black' }}
+          titleStyle={{ color: 'white' }}
+          navBarButtonColor= 'red'
+        >
 
-          {/** Tab Navigation */}
+          {/** TAB Navigation */}
           <Scene hideNavBar panHandlers={null}>
             <Tabs
               key='tabbar'
               tabBarPosition= 'bottom'
               swipeEnabled
-              tabBarStyle={{ backgroundColor: '#fff' }}
               activeBackgroundColor= 'grey'
-              inactiveBackgroundColor= 'rgba(255, 0, 0, 0.5)'
+              inactiveBackgroundColor= 'black'
               showIcon={true}
-              labelStyle={{ fontSize: 12 }}
+              labelStyle={{ fontSize: 12, color: 'white' }}
             >
-  
-              <Scene key='Profile' name='user' icon={FontAwesome} size={25} tabBarLabel='Profile'>
+
+              {/** TODO activeTintColor doesn't work ! */}
+              <Scene key='Profile' name='user' icon={FontAwesome} color='white' size={25} tabBarLabel='Profile'>
                 <Scene
                   key='Profile'
                   component={ProfileComponent}
@@ -42,7 +52,7 @@ const App = () => {
                 />
               </Scene>
   
-              <Scene key='Posts' name='news' icon={Entypo} size={25} tabBarLabel='Posts'>
+              <Scene key='Posts' name='news' icon={Entypo} color='white' size={25} tabBarLabel='Posts'>
                 <Scene
                   key='Posts'
                   component={PostsComponent}
