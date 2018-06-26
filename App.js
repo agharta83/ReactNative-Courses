@@ -31,7 +31,7 @@ const App = () => {
           navBarButtonColor= 'red'
         >
 
-          {/** TAB Navigation */}
+          {/** TAB Navigation **/}
           <Scene hideNavBar panHandlers={null}>
             <Tabs
               key='tabbar'
@@ -43,7 +43,7 @@ const App = () => {
               labelStyle={{ fontSize: 12, color: 'white' }}
             >
 
-              {/** TODO activeTintColor doesn't work ! */}
+              {/** TODO activeTintColor doesn't work ! **/}
               <Scene key='Profile' name='user' icon={FontAwesome} color='white' size={25} tabBarLabel='Profile'>
                 <Scene
                   key='Profile'
