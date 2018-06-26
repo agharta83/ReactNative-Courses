@@ -1,11 +1,12 @@
 import React from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
-import { Scene, Router, Stack, Tabs } from 'react-native-router-flux';
+import { Scene, Router, Stack, Tabs, Drawer } from 'react-native-router-flux';
 import { FontAwesome, Entypo } from '@expo/vector-icons';
 
 import HomeComponent from './src/home';
 import ProfileComponent from './src/profile';
 import PostsComponent from './src/posts';
+import SidedrawerComponent from './src/sidedrawer';
 
 /** STACK Navigation **/
 const App = () => {
@@ -17,7 +18,11 @@ const App = () => {
           title='Home'
           initial
         />
-          <Stack key='tabroot' hideNavBar panHandlers={null}>
+
+        <Drawer hideNavBar key='drawer' contentComponent={SidedrawerComponent} drawerPosition='left' size={25} drawerWidth={300}>
+
+          {/** Tab Navigation */}
+          <Scene hideNavBar panHandlers={null}>
             <Tabs
               key='tabbar'
               tabBarPosition= 'bottom'
@@ -46,8 +51,10 @@ const App = () => {
               </Scene>
   
             </Tabs>
-          </Stack>
-        </Scene>
+          </Scene>
+        </Drawer>
+ 
+      </Scene>
     </Router>
   );
 }

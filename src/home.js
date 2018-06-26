@@ -10,7 +10,7 @@ class HomeComponent extends Component {
         <Text> This is home </Text>
         <Button 
             title="See profile"
-            onPress={Actions.tabroot}
+            onPress={Actions.drawer}
             />
       </View>
     );
