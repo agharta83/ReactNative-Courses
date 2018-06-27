@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, Image, Button, StyleSheet } from 'react-native';
-import { ImagePicker, Camera, Permissions  } from 'expo';
+import { ImagePicker, Permissions  } from 'expo';
 
 class ProfileComponent extends Component {
   state = {

@@ -7,6 +7,7 @@ import HomeComponent from './src/home';
 import ProfileComponent from './src/profile';
 import PostsComponent from './src/posts';
 import SidedrawerComponent from './src/sidedrawer';
+import ContactsComponent from './src/contacts';
 
 /** STACK Navigation **/
 const App = () => {
@@ -57,6 +58,14 @@ const App = () => {
                   key='Posts'
                   component={PostsComponent}
                   title='Posts'
+                />
+              </Scene>
+
+              <Scene key='Contacts' name='group' icon={FontAwesome} color='white' size={25} tabBarLabel='Contacts'>
+                <Scene
+                  key='Contacts'
+                  component={ContactsComponent}
+                  title='Contacts'
                 />
               </Scene>
   
