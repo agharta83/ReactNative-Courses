@@ -2,6 +2,7 @@ import React from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
 import { Scene, Router, Stack, Tabs, Drawer } from 'react-native-router-flux';
 import { FontAwesome, Entypo } from '@expo/vector-icons';
+import Reactotron from 'reactotron-react-native';
 
 import HomeComponent from './src/home';
 import ProfileComponent from './src/profile';
@@ -9,8 +10,16 @@ import PostsComponent from './src/posts';
 import SidedrawerComponent from './src/sidedrawer';
 import ContactsComponent from './src/contacts';
 
+if(__DEV__) {
+  require('./helpers/reactotron');
+
+  const Reactotron = require('reactotron-react-native').default;
+  Reactotron.log('Hello world !!!');
+}
+
 /** STACK Navigation **/
 const App = () => {
+
   return (
     <Router>
       <Scene key='root'>
